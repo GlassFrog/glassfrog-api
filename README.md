@@ -2,6 +2,12 @@ The Glassfrog API
 ====================
 
 
+Requesting an API key
+----------------
+
+An organizational API key may be requested by emailing glassfrogsupport@holacracyone.com 
+
+
 Making a request
 ----------------
 
@@ -23,10 +29,10 @@ We only support XML for serialization of data.  All API URLs end in .xml to indi
 API ready for use
 -----------------
 
-* [Users](https://github.com/karlhigley/Glassfrog-API-Documentation/blob/master/sections/users.md)
-* [Roles](https://github.com/karlhigley/Glassfrog-API-Documentation/blob/master/sections/roles.md)
-* [Circles](https://github.com/karlhigley/Glassfrog-API-Documentation/blob/master/sections/circles.md)
-* [Mailing Lists](https://github.com/karlhigley/Glassfrog-API-Documentation/blob/master/sections/mailing_lists.md)
+* [Users](https://github.com/karlhigley/glassfrog-api/blob/master/sections/users.md)
+* [Roles](https://github.com/karlhigley/glassfrog-api/blob/master/sections/roles.md)
+* [Circles](https://github.com/karlhigley/glassfrog-api/blob/master/sections/circles.md)
+* [Mailing Lists](https://github.com/karlhigley/glassfrog-api/blob/master/sections/mailing_lists.md)
 
 
 API still under development
