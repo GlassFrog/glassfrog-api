@@ -20,23 +20,13 @@ https://glassfrog.holacracy.org/api/person.xml?api_key=123456789
 ```
 
 
-No JSON, just XML
------------------
-
-We only support XML for serialization of data.  All API URLs end in .xml to indicate that they return XML.
-
-
-API ready for use
+Current Version
 -----------------
 
 * [Users](https://github.com/karlhigley/glassfrog-api/blob/master/sections/users.md)
 * [Roles](https://github.com/karlhigley/glassfrog-api/blob/master/sections/roles.md)
 * [Circles](https://github.com/karlhigley/glassfrog-api/blob/master/sections/circles.md)
 * [Mailing Lists](https://github.com/karlhigley/glassfrog-api/blob/master/sections/mailing_lists.md)
-
-
-API still under development
----------------------------
 
 
 Help us make it better
