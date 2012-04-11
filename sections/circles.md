@@ -9,7 +9,7 @@ Getting circles
 
 Returns 200 OK with a response body in the following format when successful:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <circles type="array">
   <circle>

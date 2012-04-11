@@ -4,7 +4,8 @@ Mailing lists
 
 Mailing list methods return a list of users that fill certain kinds of roles in the organization: Lead Links, Rep Links, Facilitators, Secretaries, Circle Members (of a particular circle.)  Each method returns 200 OK and an array of people in the following format when successful:
 
-```<?xml version="1.0" encoding="UTF-8"?>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <people type="array">
   <person>
     <name>Joyce Bilbrey</name>

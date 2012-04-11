@@ -9,7 +9,7 @@ Get Person's Roles
 
 Returns 200 OK with a response body in the following format when successful:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <person>
   <id type="integer">516784585</id>
