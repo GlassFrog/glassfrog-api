@@ -20,7 +20,7 @@ https://glassfrog.holacracy.org/api/person.xml?api_key=123456789
 ```
 
 
-Current Version
+API Methods
 -----------------
 
 * [Users](https://github.com/karlhigley/glassfrog-api/blob/master/sections/users.md)
