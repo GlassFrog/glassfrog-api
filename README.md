@@ -19,6 +19,14 @@ An organizational API key is required for all requests.  To include an API key i
 https://glassfrog.holacracy.org/api/person.xml?api_key=123456789
 ```
 
+Changes In Version 2
+-----------------
+* Role information now includes:
+	* Term expiration dates for elected roles
+	* Role purposes
+	* Scopes
+	* Accountability IDs for structural roles (e.g. Lead Link)
+
 
 API Methods
 -----------------
