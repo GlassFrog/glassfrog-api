@@ -16,11 +16,12 @@ All URLs start with `https://glassfrog.holacracy.org/api`. **SSL only**.  The fu
 An organizational API key is required for all requests.  To include an API key in a request, append it to the URL as a parameter.
 
 ```
-https://glassfrog.holacracy.org/api/person.xml?api_key=123456789
+https://glassfrog.holacracy.org/api/v2/person.xml?api_key=123456789
 ```
 
 Changes In Version 2
 -----------------
+* API paths start with /api/v2/
 * Role information now includes:
 	* Term expiration dates for elected roles
 	* Role purposes
