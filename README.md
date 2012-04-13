@@ -27,6 +27,7 @@ Changes In Version 2
 	* Role purposes
 	* Scopes
 	* Accountability IDs for structural roles (e.g. Lead Link)
+* Person information no longer includes login (now obsolete)
 
 
 API Methods
