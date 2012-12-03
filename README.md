@@ -28,6 +28,7 @@ Changes In Version 2
 	* Scopes
 	* Accountability IDs for structural roles (e.g. Lead Link)
 * Person information no longer includes login (now obsolete)
+* Can now return all roles in a circle, including supporting sub-circle IDs
 
 
 API Methods
