@@ -34,10 +34,10 @@ Changes In Version 2
 API Methods
 -----------------
 
-* [Users](https://github.com/karlhigley/glassfrog-api/blob/API_v2/sections/users.md)
-* [Roles](https://github.com/karlhigley/glassfrog-api/blob/API_v2/sections/roles.md)
-* [Circles](https://github.com/karlhigley/glassfrog-api/blob/API_v2/sections/circles.md)
-* [Mailing Lists](https://github.com/karlhigley/glassfrog-api/blob/API_v2/sections/mailing_lists.md)
+* [Users](https://github.com/holacracybrian/glassfrog-api/blob/API_v2/sections/users.md)
+* [Roles](https://github.com/holacracybrian/glassfrog-api/blob/API_v2/sections/roles.md)
+* [Circles](https://github.com/holacracybrian/glassfrog-api/blob/API_v2/sections/circles.md)
+* [Mailing Lists](https://github.com/holacracybrian/glassfrog-api/blob/API_v2/sections/mailing_lists.md)
 
 
 Help us make it better
