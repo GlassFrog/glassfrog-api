@@ -50,6 +50,29 @@ Returns 200 OK with a response body in the following format when successful:
 </circles>
 ```
 
+
+* `GET /circle.xml?include=members` will return all circles in the organization with a sublist of the members in each circle.
+
+Returns 200 OK with a response body in the following format when successful:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<circles type="array">
+  <circle>
+    <id type="integer">429327429</id>
+    <short-name>Board</short-name>
+    <name>Board</name>
+    <members type="array">
+      <member>
+        <id type="integer">62933542</id>
+        <name>Maureen Linton</name>
+        <email>maureen@example.com</email>
+      <member>
+    </members>
+  </circle>
+<circles>
+```
+
 Getting circle roles
 ----------
 
