@@ -13,26 +13,64 @@ Returns 200 OK with a response body in the following format when successful:
 <?xml version="1.0" encoding="UTF-8"?>
 <circles type="array">
   <circle>
-    <id type="integer">856843816</id>
-    <short-name>DDC</short-name>
-  </circle>
-  <circle>
-    <id type="integer">708861762</id>
-    <short-name>Sales</short-name>
-  </circle>
-  <circle>
-    <id type="integer">582240928</id>
-    <short-name>Ops</short-name>
+    <id type="integer">429327429</id>
+    <short-name>Board</short-name>
+    <name>Board</name>
   </circle>
   <circle>
     <id type="integer">1041583805</id>
     <short-name>GCC</short-name>
+    <name>GCC</name>
   </circle>
+  <circle>
+    <id type="integer">582240928</id>
+    <short-name>Ops</short-name>
+    <name>Operations</name>
+  </circle>
+  <circle>
+    <id type="integer">856843816</id>
+    <short-name>DDC</short-name>
+    <name>Development</name>
+  </circle>
+  <circle>
+    <id type="integer">708861762</id>
+    <short-name>Sales</short-name>
+    <name>Sales</name>
+  </circle>
+  <circle>
+    <id type="integer">5828846</id>
+    <short-name>Backend</short-name>
+    <name>Back End Development</name>
+  </circle>
+  <circle>
+    <id type="integer">906325632</id>
+    <short-name>UI</short-name>
+    <name>User Interface</name>
+  </circle>
+</circles>
+```
+
+
+* `GET /circle.xml?include=members` will return all circles in the organization with a sublist of the members in each circle.
+
+Returns 200 OK with a response body in the following format when successful:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<circles type="array">
   <circle>
     <id type="integer">429327429</id>
     <short-name>Board</short-name>
+    <name>Board</name>
+    <members type="array">
+      <member>
+        <id type="integer">62933542</id>
+        <name>Maureen Linton</name>
+        <email>maureen@example.com</email>
+      <member>
+    </members>
   </circle>
-</circles>
+<circles>
 ```
 
 Getting circle roles
