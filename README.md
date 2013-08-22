@@ -43,4 +43,5 @@ API Methods
 Help us make it better
 ----------------------
 
-Please tell us how we can make the API better.  If you have a specific feature request or if you found a bug, please email glassfrogsupport@holacracyone.com  For improvements to the documentation, fork this repository and send a pull request with improvements.  
+Please tell us how we can make the API better.  
+If you have a specific feature request or if you found a bug, please email glassfrogsupport@holacracyone.com  
