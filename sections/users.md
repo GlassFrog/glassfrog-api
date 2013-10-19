@@ -39,10 +39,10 @@ Returns 200 OK with a response body in the following format when successful:
 Creating a user
 ----------
 
-* `POST /person.xml` creates a new member of the organization.
+* `POST /person.xml` creates a new member of the organization. The external_user_id fields is optional
 
 ```
-/person.xml?api_key=123456789&person[email]=test%40test.com&person[name]=Test&person[password]=test&person[password_confirmation]=test
+/person.xml?api_key=123456789&person[email]=test%40test.com&person[name]=Test&person[password]=test&person[password_confirmation]=test&person[external_user_id]=123
 ```
 
 Returns 200 OK with a response body in the following format when successful:
@@ -53,6 +53,7 @@ Returns 200 OK with a response body in the following format when successful:
   <email>test@test.com</email>
   <id type="integer">1067646470</id>
   <name>Test</name>
+  <external-user-id>123</external-user-id>
 </person>
 ```
 
@@ -69,6 +70,7 @@ Returns 200 OK with a response body in the following format when successful:
   <email>monica@fictional.com</email>
   <id type="integer">911230097</id>
   <name>Monica Wolfson</name>
+  <external-user-id>123</external_user-id>
 </person>
 ```
 
@@ -78,7 +80,7 @@ Updating a user
 * `PUT /person/[:id].xml` updates the person specified by [:id].
 
 ```
-/person/[:id].xml?api_key=123456789&person[email]=monica%40fictional.com&person[name]=Monica+Wolfson
+/person/[:id].xml?api_key=123456789&person[email]=monica%40fictional.com&person[name]=Monica+Wolfson&person[external_user_id]=345
 ```
 
 Returns 200 OK with a blank response body when successful.
