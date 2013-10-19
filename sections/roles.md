@@ -15,10 +15,12 @@ Returns 200 OK with a response body in the following format when successful:
   <id type="integer">905931655</id>
   <name>Alan Logue</name>
   <role>
+    <id type="integer">65842341</id>
     <circle-id type="integer">856843816</circle-id>
     <name>Circle Member</name>
   </role>
   <role>
+    <id type="integer">436324341</id>
     <circle-id type="integer">856843816</circle-id>
     <name>Secretary</name>
     <election>2012-01-01</election>
