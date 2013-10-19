@@ -89,6 +89,7 @@ Returns 200 OK with a response body in the following format when successful:
   <id type="integer">1041583805</id>
   <name>GCC</name>
   <role>
+    <id type="integer">65849892</id>
     <name>Development</name>
     <supporting-circle-id type="integer">856843816</supporting-circle-id>
     <purpose>Blow the client away with effortless software delivery.</purpose>
@@ -106,6 +107,7 @@ Returns 200 OK with a response body in the following format when successful:
     </accountabilities>
   </role>
   <role>
+    <id type="integer">234478234</id>
     <name>Sales</name>
     <accountabilities>
       <accountability>
