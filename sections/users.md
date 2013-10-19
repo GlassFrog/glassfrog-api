@@ -21,6 +21,7 @@ Returns 200 OK with a response body in the following format when successful:
     <email>robert@fictional.com</email>
     <id type="integer">957904360</id>
     <name>Robert Ryder</name>
+    <external-user-id>853</external-user-id>
   </person>
   <person>
     <email>olivia@fictional.com</email>
