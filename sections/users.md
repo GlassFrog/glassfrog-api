@@ -70,7 +70,7 @@ Returns 200 OK with a response body in the following format when successful:
   <email>monica@fictional.com</email>
   <id type="integer">911230097</id>
   <name>Monica Wolfson</name>
-  <external-user-id>123</external_user-id>
+  <external-user-id>123</external-user-id>
 </person>
 ```
 
