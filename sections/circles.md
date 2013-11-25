@@ -105,6 +105,12 @@ Returns 200 OK with a response body in the following format when successful:
         <id type="integer">412385958</id>
       </accountability>
     </accountabilities>
+    <filled-by>
+      <person>
+        <id type="integer">811765527</id>
+        <name>Carlos Aldrich</name>
+      </person>
+    </filled-by>
   </role>
   <role>
     <id type="integer">234478234</id>
