@@ -23,7 +23,7 @@ https://glassfrog.holacracy.org/api/v3/people?api_key=123456789
 Changes In Version 3
 --------------------
 
-* API v3 is a json api designed to follow the emerging [json-api](http://jsonapi.org/format/)
+* API v3 is a json api designed to follow the emerging [json-api](http://jsonapi.org/format/) standard
 * API paths start with /api/v3/
 
 
