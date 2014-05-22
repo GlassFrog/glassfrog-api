@@ -9,7 +9,7 @@ Getting circles
 
 Returns 200 OK with a response body in the following format when successful:
 
-```
+```json
 {
   "circles": [
     {
@@ -37,7 +37,7 @@ Returns 200 OK with a response body in the following format when successful:
 
 Returns 200 OK with a response body in the following format when successful:
 
-```
+```json
 {
   "linked": {
     "members": [
@@ -85,7 +85,7 @@ and recursively traversing the circle structure using the supporting circle ID f
 Returns 200 OK with a response body in the following format when successful:
 
 
-```
+```json
 {
   "linked": {
     "domains": [
