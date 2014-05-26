@@ -1,8 +1,17 @@
 People
 ===========
-
+* in organization
+* in circle
+* in role
+* /roles
+* /role=leadlink
+* /role=replink
+* /role=secretary
+* /role=facilitator
+* CREATE
+* UPDATE
+* DELETE
 * note: externalId is an optional field for use when integrating with systems outside GlassFrog.
-
 
 Getting members of the organization
 -----------------------------------
@@ -77,7 +86,7 @@ Returns 200 OK with a response body in the following format when successful:
 Creating a person
 ----------------
 #### Permissions
-only api_keys associated with accounts with admin permissions can add people to an organization
+only API_keys associated with accounts with admin permissions can add people to an organization
 
 * `POST /person` creates a new member of the organization. The POST body should contain the data for the person in the following format:
 
@@ -107,7 +116,7 @@ Returns 200 OK with a response body in the following format when successful:
 Retrieving a user
 -----------------
 
-* `GET /person/[:id].xml?api_key=123456789` returns information about the person specified by [:id].
+* `GET /person/[:id].xml?API_key=123456789` returns information about the person specified by [:id].
 
 Returns 200 OK with a response body in the following format when successful:
 
@@ -127,7 +136,7 @@ Updating a user
 * `PUT /person/[:id].xml` updates the person specified by [:id].
 
 ```
-/person/[:id].xml?api_key=123456789&person[email]=monica%40example.com&person[name]=Monica+Wolfson&person[external_user_id]=345
+/person/[:id].xml?API_key=123456789&person[email]=monica%40example.com&person[name]=Monica+Wolfson&person[external_user_id]=345
 ```
 
 Returns 200 OK with a blank response body when successful.
@@ -139,7 +148,7 @@ Removing a user
 * `DELETE /person/[:id].xml` removes the person specified by [:id], and unassigns them from all roles.
 
 ```
-/person/[:id].xml?api_key=123456789
+/person/[:id].xml?API_key=123456789
 ```
 
 Returns 200 OK with a blank response body when successful.
