@@ -3,42 +3,75 @@ Users
 
 
 Getting members of the organization
-----------
+------------------------------------
 
 * `GET /person.xml` returns a list of people who are members of the organization.
 
 Returns 200 OK with a response body in the following format when successful:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<people type="array">
-  <person>
-    <email>joyce@fictional.com</email>
-    <id type="integer">516784585</id>
-    <name>Joyce Bilbrey</name>
-  </person>
-  <person>
-    <email>robert@fictional.com</email>
-    <id type="integer">957904360</id>
-    <name>Robert Ryder</name>
-    <external-user-id>853</external-user-id>
-  </person>
-  <person>
-    <email>olivia@fictional.com</email>
-    <id type="integer">209365805</id>
-    <name>Olivia Battle</name>
-  </person>
-  <person>
-    <email>marlene@fictional.com</email>
-    <id type="integer">251465608</id>
-    <name>Marlene Mclane</name>
-  </person>
-  [...]
-</people>
+```json
+{
+    "people": [{
+        "id": 911230097,
+        "name": "Monica Wolfson",
+        "email": "monica@fictional.com",
+        "externalId": null
+    }, {
+        "id": 380424410,
+        "name": "Louis Hoppe",
+        "email": "louis@fictional.com",
+        "externalId": null
+    }, {
+        "id": 811765527,
+        "name": "Carlos Aldrich",
+        "email": "carlos@fictional.com",
+        "externalId": null
+    }, {
+        "id": 657190835,
+        "name": "Lawrence Copper",
+        "email": "lawrence@fictional.com",
+        "externalId": null
+    }, {
+        "id": 516784585,
+        "name": "Joyce Bilbrey",
+        "email": "joyce@fictional.com",
+        "externalId": null
+    }
+}
 ```
 
+Filtering by role
+-------------------
+
+* this functionality replaces the mailing_list endpoint from v2.  it allows filtering of people by core role name (facilitator, replink, leadlink, secretary)
+
+* `GET /people?role=secretary` returns list of all secretaries in the organization
+
+```json
+{
+    "people": [{
+        "id": 657190835,
+        "name": "Lawrence Copper",
+        "email": "lawrence@fictional.com",
+        "externalId": null
+    }, {
+        "id": 905931655,
+        "name": "Alan Logue",
+        "email": "alan@fictional.com",
+        "externalId": "34"
+    }, {
+        "id": 943584124,
+        "name": "Maureen Linton",
+        "email": "maureen@fictional.com",
+        "externalId": null
+    }]
+}
+```
+
+
+
 Creating a user
-----------
+----------------
 
 * `POST /person.xml` creates a new member of the organization. The external_user_id fields is optional
 

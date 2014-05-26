@@ -25,15 +25,19 @@ Changes In Version 3
 
 * API v3 is a json api designed to follow the emerging [json-api](http://jsonapi.org/format/) standard
 * API paths start with /api/v3/
-
+* Mailing Lists now live on the /people endpoint, with a parameter of core role
 
 API Endpoints
 -------------
 
-* [People](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/users.md)
+* [People](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/people.md)
 * [Roles](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/roles.md)
 * [Circles](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/circles.md)
-* [Mailing Lists](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/mailing_lists.md)
+
+
+* [Projects](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/projects.md)
+* [Checklist Items](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/checklist_items.md)
+* [Metrics](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/metrics.md)
 
 
 Help us make it better
