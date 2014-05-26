@@ -1,13 +1,23 @@
 Glassfrog API v3 beta
 =====================
 
-Please note!  The v3 API is in a testing period and subject to breaking changes at any time.
+Status
+--------
+The v3 API is in beta.  The current stable version is [v2](/holacracyone/glassfrog-api/tree/API_v3)
+
+With v3, we've upgraded the api to use and return json, and we are planning to only add new functionality to v3 in the future.
+If you are currently using v2, you can also try out v3 at the same time without affecting your current integrations.
+Please note that since v3 is in beta, the api endpoints are subject to change.
+While we will make reasonable attempts to keep them stable, we may still be changing any endpoint as we get feedback on usage.
+
+
+API v3 is a json api designed to follow the emerging [json-api](http://jsonapi.org/format/) standard
 
 API keys
 --------
 
 API keys for v3 are found in GlassFrog in the profile/account dropdown under your name in the top right of the application.
-
+API keys provide full access to your GlassFrog account with the same permissions that you have. Keep them safe like you would your password! Generating and revoking keys is easy, create one for each application you need to integrate with, and it will be easier to replace later if a specific key is compromised.
 
 Making a request
 ----------------
@@ -20,24 +30,19 @@ or pass it as the value of the `X-Auth-Token` header.
 https://glassfrog.holacracy.org/api/v3/people?api_key=123456789
 ```
 
-Changes In Version 3
+Changes In Version 3  (from v2)
 --------------------
-
-* API v3 is a json api designed to follow the emerging [json-api](http://jsonapi.org/format/) standard
-* API paths start with /api/v3/
-* Mailing Lists now live on the /people endpoint, with a parameter of core role
+* [Release Notes](sections/changes.md)
 
 API Endpoints
 -------------
 
-* [People](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/people.md)
-* [Roles](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/roles.md)
-* [Circles](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/circles.md)
-
-
-* [Projects](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/projects.md)
-* [Checklist Items](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/checklist_items.md)
-* [Metrics](https://github.com/holacracybrian/glassfrog-api/blob/API_v3/sections/metrics.md)
+* [People](sections/people.md)
+* [Roles](sections/roles.md)
+* [Circles](sections/circles.md)
+* [Projects](sections/projects.md)
+* [Checklist Items](sections/checklist_items.md)
+* [Metrics](sections/metrics.md)
 
 
 Help us make it better

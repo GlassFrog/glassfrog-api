@@ -44,13 +44,13 @@ Returns 200 OK with a response body in the following format when successful:
       {
         "id": 657190835,
         "name": "Lawrence Copper",
-        "email": "lawrence@fictional.com",
+        "email": "lawrence@example.com",
         "external_id": null
       },
       {
         "id": 811765527,
         "name": "Carlos Aldrich",
-        "email": "carlos@fictional.com",
+        "email": "carlos@example.com",
         "external_id": null
       },
     ]
@@ -174,13 +174,13 @@ Returns 200 OK with a response body in the following format when successful:
       {
         "id": 657190835,
         "name": "Lawrence Copper",
-        "email": "lawrence@fictional.com",
+        "email": "lawrence@example.com",
         "external_id": null
       },
       {
         "id": 811765527,
         "name": "Carlos Aldrich",
-        "email": "carlos@fictional.com",
+        "email": "carlos@example.com",
         "external_id": null
       }
     ]
