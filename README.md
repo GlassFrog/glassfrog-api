@@ -3,7 +3,7 @@ Glassfrog API v3 beta
 
 Status
 --------
-The v3 API is in beta.  The current stable version is [v2](../../../tree/API_v2)
+The v3 API is in beta.  The current stable version is [v2](../../tree/API_v2)
 
 With v3, we've upgraded the api to use and return json, and we are planning to only add new functionality to v3 in the future.
 If you are currently using v2, you can also try out v3 at the same time without affecting your current integrations.
