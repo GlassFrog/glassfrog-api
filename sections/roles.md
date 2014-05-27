@@ -1,7 +1,7 @@
 Roles
 ========
 
-Retrieving roles (GET)
+Retrieving Roles (GET)
 ----------------------
 
 #### Response Format
