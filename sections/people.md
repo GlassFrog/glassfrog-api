@@ -1,26 +1,10 @@
 People
 ===========
-* in organization
-* in circle
-* in role
-* /roles
-* /role=leadlink
-* /role=replink
-* /role=secretary
-* /role=facilitator
-* CREATE
-* UPDATE
-* DELETE
-* note: externalId is an optional field for use when integrating with systems outside GlassFrog.
 
-Getting members of the organization
------------------------------------
+Retrieving people (GET)
+----------------------
 
-
-
-* `GET /person` returns a list of people who are members of the organization.
-
-Returns 200 OK with a response body in the following format when successful:
+#### response format
 
 ```json
 {
@@ -28,21 +12,6 @@ Returns 200 OK with a response body in the following format when successful:
         "id": 911230097,
         "name": "Monica Wolfson",
         "email": "monica@example.com",
-        "externalId": null
-    }, {
-        "id": 380424410,
-        "name": "Louis Hoppe",
-        "email": "louis@example.com",
-        "externalId": null
-    }, {
-        "id": 811765527,
-        "name": "Carlos Aldrich",
-        "email": "carlos@example.com",
-        "externalId": null
-    }, {
-        "id": 657190835,
-        "name": "Lawrence Copper",
-        "email": "lawrence@example.com",
         "externalId": null
     }, {
         "id": 516784585,
@@ -53,102 +22,103 @@ Returns 200 OK with a response body in the following format when successful:
 }
 ```
 
-### Filtering by role
+* Note: externalId is an optional field for use when integrating with systems outside of GlassFrog.
 
 
-* this functionality replaces the mailing_list endpoint from v2.  it allows filtering of people by core role name (facilitator, replink, leadlink, secretary)
+### Get all People in the Organization
 
-* `GET /people?role=secretary` returns list of all secretaries in the organization
+`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people`
 
-```json
+### Get a specific Person
+
+`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people/$PERSON_ID`
+
+
+### Filtering by circle (circleID=)
+
+`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people?circleId=$CIRCLE_ID`
+
+OR
+
+`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/circles/$CIRCLE_ID/people`
+
+
+### Filtering by role (role=)
+
+The API supports retrieving all role-fillers of core roles in the organization.
+
+##### Secretary
+
+`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people?role=secretary`
+
+##### Rep Link
+
+`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people?role=replink`
+
+##### Lead Link
+
+`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people?role=leadlink`
+
+##### Facilitator
+
+`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people?role=facilitator`
+
+
+
+Adding People (POST)
+----------------------
+
+### Create a new member of the organization:
+
+`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"people":[{ "name":"Sally Benally", "email":"sally@example.com" }]}' http://localhost:3000/api/v3/people`
+
+A successful POST returns status 200 with the newly created resource in the body:
+
+```
 {
     "people": [{
         "id": 657190835,
         "name": "Lawrence Copper",
         "email": "lawrence@example.com",
         "externalId": null
-    }, {
-        "id": 905931655,
-        "name": "Alan Logue",
-        "email": "alan@example.com",
-        "externalId": "34"
-    }, {
-        "id": 943584124,
-        "name": "Maureen Linton",
-        "email": "maureen@example.com",
-        "externalId": null
     }]
 }
 ```
 
+#### Emails sent:
+
+Creating a Person through the API will email the new user with a welcome email and instructions for setting their password.
+
+#### Permissions notes:
+
+Only API_keys associated with accounts with admin permissions can add people to an organization.
+
+#### Attributes:
+* __name__ _(required)_: full name of the person
+* __email__ _(required)_: email of the person
+* __external_id__ _(optional)_: id of the person from any external system
 
 
-Creating a person
-----------------
-#### Permissions
-only API_keys associated with accounts with admin permissions can add people to an organization
 
-* `POST /person` creates a new member of the organization. The POST body should contain the data for the person in the following format:
+Updating People ( PUT / PATCH )
+---------------------------------
 
-```
-{
-    "people": [{
-        "id": 657190835,
-        "name": "Lawrence Copper",
-        "email": "lawrence@example.com",
-        "externalId": null
-    }]
-}
-```
+### Updating name:
 
-Returns 200 OK with a response body in the following format when successful:
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/people/0/name", "value":"Sally Martinez"}]' http://localhost:3000/api/v3/people/$PERSON_ID`
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<person>
-  <email>test@test.com</email>
-  <id type="integer">1067646470</id>
-  <name>Test</name>
-  <external-user-id>123</external-user-id>
-</person>
-```
+### Updating multiple attributes:
 
-Retrieving a user
------------------
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/people/0/name", "value":"Sally Martinez"},{"op":"replace","path":"/people/0/email", "value":"sally.martinez@example.com"}]' http://localhost:3000/api/v3/people/$PERSON_ID`
 
-* `GET /person/[:id].xml?API_key=123456789` returns information about the person specified by [:id].
-
-Returns 200 OK with a response body in the following format when successful:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<person>
-  <email>monica@example.com</email>
-  <id type="integer">911230097</id>
-  <name>Monica Wolfson</name>
-  <external-user-id>123</external-user-id>
-</person>
-```
-
-Updating a user
-----------
-
-* `PUT /person/[:id].xml` updates the person specified by [:id].
-
-```
-/person/[:id].xml?API_key=123456789&person[email]=monica%40example.com&person[name]=Monica+Wolfson&person[external_user_id]=345
-```
-
-Returns 200 OK with a blank response body when successful.
+Returns 204 No Content on success.
 
 
-Removing a user
-----------
+Removing People ( DELETE )
+----------------------
 
-* `DELETE /person/[:id].xml` removes the person specified by [:id], and unassigns them from all roles.
+### Remove a person
 
-```
-/person/[:id].xml?API_key=123456789
-```
+`curl -H "X-Auth-Token: $API_KEY" -X DELETE http://localhost:3000/api/v3/people/$PERSON_ID`
 
-Returns 200 OK with a blank response body when successful.
+returns 204 No Content on success.

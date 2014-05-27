@@ -44,6 +44,13 @@ Or pass it as the value of the `X-Auth-Token` header:
 curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people
 ```
 
+#### PATCH requests
+
+GlassFrog API uses PATCH for updating resource documents, however, PUT may be used in place of PATCH
+
+PATCH / PUT requests follow the jsonapi formatting standards. See "Updating a Document" and "Relationships" sections of the standards
+for more details: [http://jsonapi.org/format](http://jsonapi.org/format).
+
 
 ### API Endpoint details
 
@@ -98,11 +105,11 @@ GlassFrog API uses standard HTTP response codes to indicate various states:
 * 403 - Unauthorized:  Your API key is good but your user account doesn't have permission to perform the specified action.
 * 404 - Not Found: Couldn't find a resource you requested, or invalid URL
 * 422 - Unprocessable Entity: There was a problem with the data you provided, either we couldn't parse it or it specified an invalid state.
-* 500 - Server Error: Sad Frog
+* 500 - Server Error: Unhandled exception
 
 
 
 Help us make it better
 -----------------------
 
-Please tell us how we can make the API better.  If you have a specific feature request or if you found a bug, please email glassfrog-API@holacracyone.com
+Please tell us how we can make the API better.  If you have a specific feature request or if you found a bug, please email glassfrog-api@holacracyone.com
