@@ -21,8 +21,6 @@ OR
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID/roles`
 
-returns roles for a particular person:
-
 
 ### Filtering by Circle
 
@@ -95,7 +93,7 @@ With the exception of Lead Link roles, role assignment is additive and will add 
 
 #### Emails Sent
 
-Assigning roles via the API *will* send email notifications to added and removed role-fillers.
+Assigning roles via the API will send email notifications to added and removed role-fillers.
 
 #### Assigning Lead Links
 
