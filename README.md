@@ -31,7 +31,7 @@ Keep them safe like you would your password! Generating and revoking keys is eas
 Using the API
 ----------------
 
-### Making a request
+### Making a Request
 
 All URLs start with `https://glassfrog.holacracy.org/API/v3/`. **SSL only**.
 The full request path is formed by appending the method path to this address.
@@ -48,7 +48,7 @@ Or pass it as the value of the `X-Auth-Token` header:
 curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people
 ```
 
-### PATCH requests
+### PATCH Requests
 
 GlassFrog API uses PATCH for updating resource documents, however, PUT may be used in place of PATCH
 
@@ -105,7 +105,7 @@ GlassFrog API uses standard HTTP response codes to indicate various states:
 * 500 - Server Error: Unhandled exception
 
 
-### API Endpoint details
+### API Endpoint Details
 
 * [People](sections/people.md)
 * [Roles](sections/roles.md)
@@ -115,7 +115,7 @@ GlassFrog API uses standard HTTP response codes to indicate various states:
 * [Metrics](sections/metrics.md)
 
 
-Help us make it better
+Help us make it better!
 -----------------------
 
 Please tell us how we can make the API better.  If you have a specific feature request or if you found a bug, please email glassfrog-api@holacracyone.com
