@@ -6,8 +6,6 @@ Retrieving roles (GET)
 
 #### response format
 
-All GET roles requests follow a similar format:
-
 ```json
 {
   "linked": {
@@ -25,7 +23,7 @@ All GET roles requests follow a similar format:
       {
         "id": 811765527,
         "name": "Carlos Aldrich",
-        "email": "carlos@fictional.com",
+        "email": "carlos@example.com",
         "externalId": null
       }
     ]
@@ -55,31 +53,31 @@ All GET roles requests follow a similar format:
 
 ### Get all Roles for Organization
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/roles`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles`
 
 ### Get a specific Role
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/roles/$ROLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
 
 
 ### Filtering by Person
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/roles?personId=$PERSON_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles?person_id=$PERSON_ID`
 
 OR
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people/$PERSON_ID/roles`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID/roles`
 
 returns roles for a particular person:
 
 
 ### Filtering by Circle
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/roles?circleId=$CIRCLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles?circle_id=$CIRCLE_ID`
 
 OR
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
 
 
 Updating Role Assignments ( PUT / PATCH )
@@ -89,11 +87,11 @@ With the exception of Lead Link roles, role assignment is additive and will add 
 
 ### adding a role assignment
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"add","path":"/roles/0/links/people/$PERSON_ID"}]' http://localhost:3000/api/v3/roles/$ROLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"add","path":"/roles/0/links/people/$PERSON_ID"}]' https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
 
 ### removing role assignment
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"remove","path":"/roles/0/links/people/$PERSON_ID"}]' http://localhost:3000/api/v3/roles/$ROLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"remove","path":"/roles/0/links/people/$PERSON_ID"}]' https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
 
 #### Emails sent:
 

@@ -9,7 +9,10 @@ With v3, we've upgraded the API to use and return json, and we are planning to o
 If you are currently using v2, you can also try out v3 at the same time without affecting your current integrations.
 Please note that since v3 is in beta, the API endpoints are subject to change.
 While we will make reasonable attempts to keep them stable, we may still be changing any endpoint as we get feedback on usage.
-For more details on the latest changes, see [Release Notes](sections/release_notes.md)
+
+### Recent Changes
+
+For details on the latest changes see [Release Notes](sections/changes.md)
 
 ### Authentication
 
@@ -41,7 +44,7 @@ curl "https://glassfrog.holacracy.org/api/v3/people?api_key=$API_KEY"
 Or pass it as the value of the `X-Auth-Token` header:
 
 ```
-curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/people
+curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people
 ```
 
 #### PATCH requests
@@ -50,6 +53,8 @@ GlassFrog API uses PATCH for updating resource documents, however, PUT may be us
 
 PATCH / PUT requests follow the jsonapi formatting standards. See "Updating a Document" and "Relationships" sections of the standards
 for more details: [http://jsonapi.org/format](http://jsonapi.org/format).
+
+**Transactional updates:** If one operation in a multi-operation requests fails then the whole request will fail and none of the operations will be processed.
 
 
 ### API Endpoint details

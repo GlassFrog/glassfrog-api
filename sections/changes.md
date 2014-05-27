@@ -2,14 +2,14 @@ Release Notes
 ===============
 
 
-May 28, 2014 - Initial API v3
+May 28, 2014 - Initial API v3 (beta)
 ------------------------
-
-* format in json not xml
-* API paths start with /API/v3/
-* Mailing Lists now live on the /people endpoint, with a parameter of core role
+* Implements all v2 functionality
+* Format of GET responses and POST and PATCH bodies is json (not xml)
+* API paths start with /api/v3
+* Mailing Lists now live on the [people](people.md) endpoint, with a parameter of core role; all Person resources now contain the email attribute
 * API keys are now associated with individual accounts (rather than the whole organization)
-* Roles endpoints include core roles (Lead Link, Rep Link, Secretary, Facilitator)
-* Added project, metrics, checklist_items
+* [Roles](roles.md) endpoints include core roles (Lead Link, Rep Link, Secretary, Facilitator)
+* Added readonly endpoints for [projects](projects.md), [metrics](metrics.md), and [checklist_items](checklist_items.md)
+* Added ability to assign roles
 
-* This functionality replaces the mailing_list endpoint from v2. All Person resources now contain the email attribute.

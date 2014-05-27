@@ -31,12 +31,12 @@ Retrieving circles (GET)
 
 ### A specific circle
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/circles/$CIRCLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID`
 
 
 ### All circles in the organization
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/circles`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles`
 
 
 
@@ -91,20 +91,20 @@ The circles endpoint also supports aliases that refer to the following resources
 
 ##### [People](/people.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/circles/$CIRCLE_ID/people`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/people`
 
 ##### [Roles](/roles.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
 
 ##### [Projects](/projects.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/circles/$CIRCLE_ID/projects`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/projects`
 
 ##### [Metrics](/metrics.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/circles/$CIRCLE_ID/metrics`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/metrics`
 
 ##### [Checklist Items](/checklist_items.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://nexus-staging.holacracy.org/api/v3/circles/$CIRCLE_ID/checklist_items`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/checklist_items`
