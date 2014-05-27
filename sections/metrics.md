@@ -1,10 +1,10 @@
-metrics
+Metrics
 ==========
 
-Retrieving metrics ( GET )
+Retrieving Metrics (GET)
 --------------------------
 
-#### response format
+#### Response Format
 
 ```json
 {
@@ -47,7 +47,7 @@ Retrieving metrics ( GET )
 }
 ```
 
-### Getting all metrics on a circle
+### Getting all Metrics on a Circle
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/metrics`
 

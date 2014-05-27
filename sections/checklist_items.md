@@ -1,10 +1,10 @@
 Checklist Items
 ==========
 
-Retrieving Checklist Items ( GET )
+Retrieving Checklist Items (GET)
 --------------------------
 
-#### response format
+#### Response Format
 
 ```json
 {
@@ -49,7 +49,7 @@ Retrieving Checklist Items ( GET )
 }
 ```
 
-### Getting all checklist_items on a circle
+### Getting all Checklist Items on a Circle
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/checklist_items`
 
@@ -57,7 +57,7 @@ OR
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/checklist_items?circle_id=$CIRCLE_ID`
 
-#### Attribute notes
+#### Attribute Notes
 
 * **role**:  role of 'Circle Member' indicates checklist item applies to all circle members.
 

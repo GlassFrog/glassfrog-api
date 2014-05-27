@@ -1,10 +1,10 @@
 Projects
 ==========
 
-Retrieving Projects ( GET )
+Retrieving Projects (GET)
 --------------------------
 
-#### response format
+#### Response Format
 
 ```json
 "linked": {
@@ -60,7 +60,7 @@ Retrieving Projects ( GET )
 }
 ```
 
-### Getting all projects on a circle
+### Getting all Projects on a Circle
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/projects`
 
@@ -69,15 +69,16 @@ OR
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/projects?circle_id=$CIRCLE_ID`
 
 
-#### Attribute notes
+#### Attribute Notes
+
   * **waiting_on_who**: only returned if status is waiting or status is future
   * **watiting_on_what**: only returned if status is waiting or status is future
   * **role**: when null, indicates Individual Action
   * **private_to_circle**: true indicates viewable only to circle members or admin
 
-#### Security Note:
+#### Security Note
 
-*private_to_circle* projects should only be exposed to members of the projects' circle
+*private_to_circle*: projects should only be exposed to members of the projects' circle
 
 
 

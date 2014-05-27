@@ -4,7 +4,7 @@ Roles
 Retrieving roles (GET)
 ----------------------
 
-#### response format
+#### Response Format
 
 ```json
 {
@@ -80,24 +80,24 @@ OR
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
 
 
-Updating Role Assignments ( PUT / PATCH )
+Updating Role Assignments (PATCH/PUT)
 -----------------------------------
 
 With the exception of Lead Link roles, role assignment is additive and will add new role-fillers. Assigning Lead Links is special case, see below for more details.
 
-### adding a role assignment
+### Adding a Role Assignment
 
 `curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"add","path":"/roles/0/links/people/$PERSON_ID"}]' https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
 
-### removing role assignment
+### Removing Role Assignment
 
 `curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"remove","path":"/roles/0/links/people/$PERSON_ID"}]' https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
 
-#### Emails sent:
+#### Emails Sent
 
 Assigning roles via the API *will* send email notifications to added and removed role-fillers.
 
-#### assigning Lead Links
+#### Assigning Lead Links
 
 To assign to the Lead Link of a circle, you must assign to the corresponding role in the super-circle; you can't assign directly to the Lead Link role of a circle.
 Additionally, this role is always single filled, and assigning it will replace the current role-filler rather than adding a new

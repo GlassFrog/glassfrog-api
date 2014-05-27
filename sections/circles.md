@@ -1,10 +1,10 @@
 Circles
 ========
 
-Retrieving circles (GET)
+Retrieving Circles (GET)
 ----------------------
 
-#### response format
+#### Response Format
 
 ```json
 {
@@ -29,18 +29,18 @@ Retrieving circles (GET)
 }
 ```
 
-### A specific circle
+### A Specific Circle
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID`
 
 
-### All circles in the organization
+### All Circles in the Organization
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles`
 
 
 
-### Including members in the response (include=members)
+### Including Members in the Response (include=members)
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles?include=members`
 
@@ -80,7 +80,6 @@ will return all circles in the organization with a sublist of the members in eac
   ]
 }
 ```
-
 
 
 Aliases

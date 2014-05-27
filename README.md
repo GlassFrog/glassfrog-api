@@ -3,16 +3,19 @@ Glassfrog API v3 beta
 
 Overview
 --------
-The v3 API is in beta.  The current stable version is [v2](../../tree/API_v2)
 
-With v3, we've upgraded the API to use and return json, and we are planning to only add new functionality to v3 in the future.
-If you are currently using v2, you can also try out v3 at the same time without affecting your current integrations.
+### Status
+
+The v3 API is in beta.  The current stable version is [v2](../../tree/API_v2).
+
+With v3, we've upgraded the API to use and return json.  When v3 is finalized, v2 will be deprecated and new features will be added only to v3.
+If you are currently using v2, you can try out v3 at the same time without affecting your current integrations.
 Please note that since v3 is in beta, the API endpoints are subject to change.
 While we will make reasonable attempts to keep them stable, we may still be changing any endpoint as we get feedback on usage.
 
 ### Recent Changes
 
-For details on the latest changes see [Release Notes](sections/changes.md)
+For details on the latest changes see [Release Notes](sections/changes.md).
 
 ### Authentication
 
@@ -24,8 +27,6 @@ Keep them safe like you would your password! Generating and revoking keys is eas
 ### Design
 
 * API v3 is designed to follow the emerging [json-API](http://jsonAPI.org/format/) standard
-* Note that all keys use a camelCase format
-
 
 Using the API
 ----------------
@@ -47,7 +48,7 @@ Or pass it as the value of the `X-Auth-Token` header:
 curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people
 ```
 
-#### PATCH requests
+### PATCH requests
 
 GlassFrog API uses PATCH for updating resource documents, however, PUT may be used in place of PATCH
 
@@ -56,15 +57,6 @@ for more details: [http://jsonapi.org/format](http://jsonapi.org/format).
 
 **Transactional updates:** If one operation in a multi-operation requests fails then the whole request will fail and none of the operations will be processed.
 
-
-### API Endpoint details
-
-* [People](sections/people.md)
-* [Roles](sections/roles.md)
-* [Circles](sections/circles.md)
-* [Projects](sections/projects.md)
-* [Checklist Items](sections/checklist_items.md)
-* [Metrics](sections/metrics.md)
 
 ### Responses
 
@@ -112,6 +104,15 @@ GlassFrog API uses standard HTTP response codes to indicate various states:
 * 422 - Unprocessable Entity: There was a problem with the data you provided, either we couldn't parse it or it specified an invalid state.
 * 500 - Server Error: Unhandled exception
 
+
+### API Endpoint details
+
+* [People](sections/people.md)
+* [Roles](sections/roles.md)
+* [Circles](sections/circles.md)
+* [Projects](sections/projects.md)
+* [Checklist Items](sections/checklist_items.md)
+* [Metrics](sections/metrics.md)
 
 
 Help us make it better

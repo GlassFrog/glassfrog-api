@@ -1,10 +1,10 @@
 People
 ===========
 
-Retrieving people (GET)
+Retrieving People (GET)
 ----------------------
 
-#### response format
+#### Response Format
 
 ```json
 {
@@ -22,19 +22,17 @@ Retrieving people (GET)
 }
 ```
 
-* Note: externalId is an optional field for use when integrating with systems outside of GlassFrog.
-
 
 ### Get all People in the Organization
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people`
 
-### Get a specific Person
+### Get a Specific Person
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID`
 
 
-### Filtering by circle (circle_id=)
+### Filtering by Circle (circle_id=)
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?circle_id=$CIRCLE_ID`
 
@@ -43,7 +41,7 @@ OR
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/people`
 
 
-### Filtering by role (role=)
+### Filtering by Role (role=)
 
 The API supports retrieving all role-fillers of core roles in the organization.
 
@@ -64,11 +62,15 @@ The API supports retrieving all role-fillers of core roles in the organization.
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=facilitator`
 
 
+#### Attribute Notes
+
+* **external_id** (optional): for client use for storing ids from systems outside of GlassFrog
+
 
 Adding People (POST)
 ----------------------
 
-### Create a new member of the organization:
+### Create a New Member of the Organization
 
 `curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"people":[{ "name":"Sally Benally", "email":"sally@example.com" }]}' https://glassfrog.holacracy.org/api/v3/people`
 
@@ -85,39 +87,39 @@ A successful POST returns status 200 with the newly created resource in the body
 }
 ```
 
-#### Emails sent:
+#### Emails Sent
 
 Creating a Person through the API will email the new user with a welcome email and instructions for setting their password.
 
-#### Permissions notes:
+#### Permissions Notes
 
 Only API_keys associated with accounts with admin permissions can add people to an organization.
 
-#### Attributes:
+#### Attributes
 * __name__ _(required)_: full name of the person
 * __email__ _(required)_: email of the person
 * __external_id__ _(optional)_: id of the person from any external system
 
 
 
-Updating People ( PUT / PATCH )
+Updating People (PATCH/PUT)
 ---------------------------------
 
-### Updating name:
+### Updating Name
 
 `curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/people/0/name", "value":"Sally Martinez"}]' https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID`
 
-### Updating multiple attributes:
+### Updating Multiple Attributes
 
 `curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/people/0/name", "value":"Sally Martinez"},{"op":"replace","path":"/people/0/email", "value":"sally.martinez@example.com"}]' https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID`
 
 Returns 204 No Content on success.
 
 
-Removing People ( DELETE )
+Removing People (DELETE)
 ----------------------
 
-### Remove a person
+### Remove a Person
 
 `curl -H "X-Auth-Token: $API_KEY" -X DELETE https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID`
 
