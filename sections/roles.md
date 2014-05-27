@@ -46,10 +46,6 @@ Retrieving Roles (GET)
 }
 ```
 
-###### Notes
-
-* Elected roles will also include elected_until attribute, which returns the end date for current term.
-
 
 ### Get all Roles for Organization
 
@@ -78,6 +74,11 @@ returns roles for a particular person:
 OR
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
+
+
+#### Attribute Notes
+
+* **elected_until**: elected roles will include elected_until attribute, which returns the end date for current term
 
 
 Updating Role Assignments (PATCH/PUT)

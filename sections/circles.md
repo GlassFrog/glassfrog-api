@@ -88,22 +88,22 @@ Aliases
 The circles endpoint also supports aliases that refer to the following resources for a specific circle. See the documentation for
   each resource below for options:
 
-##### [People](/people.md)
+##### [People](/sections/people.md)
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/people`
 
-##### [Roles](/roles.md)
+##### [Roles](/sections/roles.md)
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
 
-##### [Projects](/projects.md)
+##### [Projects](/sections/projects.md)
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/projects`
 
-##### [Metrics](/metrics.md)
+##### [Metrics](/sections/metrics.md)
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/metrics`
 
-##### [Checklist Items](/checklist_items.md)
+##### [Checklist Items](/sections/checklist_items.md)
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/checklist_items`
