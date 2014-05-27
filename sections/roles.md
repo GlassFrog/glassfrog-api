@@ -4,6 +4,35 @@ Roles
 Retrieving Roles (GET)
 ----------------------
 
+### Get all Roles for Organization
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles`
+
+### Get a specific Role
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
+
+
+### Filtering by Person
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles?person_id=$PERSON_ID`
+
+OR
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID/roles`
+
+returns roles for a particular person:
+
+
+### Filtering by Circle
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles?circle_id=$CIRCLE_ID`
+
+OR
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
+
+
 #### Response Format
 
 ```json
@@ -45,36 +74,6 @@ Retrieving Roles (GET)
   ]
 }
 ```
-
-
-### Get all Roles for Organization
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles`
-
-### Get a specific Role
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
-
-
-### Filtering by Person
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles?person_id=$PERSON_ID`
-
-OR
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID/roles`
-
-returns roles for a particular person:
-
-
-### Filtering by Circle
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles?circle_id=$CIRCLE_ID`
-
-OR
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
-
 
 #### Attribute Notes
 

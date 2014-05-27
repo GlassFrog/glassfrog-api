@@ -4,25 +4,6 @@ People
 Retrieving People (GET)
 ----------------------
 
-#### Response Format
-
-```json
-{
-    "people": [{
-        "id": 911230097,
-        "name": "Monica Wolfson",
-        "email": "monica@example.com",
-        "externalId": null
-    }, {
-        "id": 516784585,
-        "name": "Joyce Bilbrey",
-        "email": "joyce@example.com",
-        "externalId": null
-    }
-}
-```
-
-
 ### Get all People in the Organization
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people`
@@ -61,6 +42,24 @@ The API supports retrieving all role-fillers of core roles in the organization.
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=facilitator`
 
+
+#### Response Format
+
+```json
+{
+    "people": [{
+        "id": 911230097,
+        "name": "Monica Wolfson",
+        "email": "monica@example.com",
+        "externalId": null
+    }, {
+        "id": 516784585,
+        "name": "Joyce Bilbrey",
+        "email": "joyce@example.com",
+        "externalId": null
+    }
+}
+```
 
 #### Attribute Notes
 

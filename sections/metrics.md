@@ -4,6 +4,15 @@ Metrics
 Retrieving Metrics (GET)
 --------------------------
 
+### Getting all Metrics on a Circle
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/metrics`
+
+OR
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/metrics?circle_id=$CIRCLE_ID`
+
+
 #### Response Format
 
 ```json
@@ -46,16 +55,6 @@ Retrieving Metrics (GET)
     }
 }
 ```
-
-### Getting all Metrics on a Circle
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/metrics`
-
-OR
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/metrics?circle_id=$CIRCLE_ID`
-
-
 
 
 

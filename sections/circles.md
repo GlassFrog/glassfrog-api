@@ -4,6 +4,15 @@ Circles
 Retrieving Circles (GET)
 ----------------------
 
+### A Specific Circle
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID`
+
+
+### All Circles in the Organization
+
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles`
+
 #### Response Format
 
 ```json
@@ -28,17 +37,6 @@ Retrieving Circles (GET)
   ]
 }
 ```
-
-### A Specific Circle
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID`
-
-
-### All Circles in the Organization
-
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles`
-
-
 
 ### Including Members in the Response (include=members)
 
