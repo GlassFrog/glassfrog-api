@@ -32,11 +32,11 @@ The API supports retrieving all role-fillers of core roles in the organization.
 
 ##### Rep Link
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=replink`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=rep_link`
 
 ##### Lead Link
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=leadlink`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=lead_link`
 
 ##### Facilitator
 
@@ -51,12 +51,12 @@ The API supports retrieving all role-fillers of core roles in the organization.
         "id": 911230097,
         "name": "Monica Wolfson",
         "email": "monica@example.com",
-        "externalId": null
+        "external_id": null
     }, {
         "id": 516784585,
         "name": "Joyce Bilbrey",
         "email": "joyce@example.com",
-        "externalId": null
+        "external_id": null
     }
 }
 ```
@@ -81,7 +81,7 @@ A successful POST returns status 200 with the newly created resource in the body
         "id": 657190835,
         "name": "Lawrence Copper",
         "email": "lawrence@example.com",
-        "externalId": null
+        "external_id": null
     }]
 }
 ```

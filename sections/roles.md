@@ -40,7 +40,7 @@ OR
       {
         "id": 582240928,
         "name": "Operations",
-        "shortName": "Ops",
+        "short_name": "Ops",
         "strategy": "Emphasize \"Documenting & Aligning to Standards\", even over \"Developing & Co-Creating Novelty\"",
         "links": {
         }
@@ -51,7 +51,7 @@ OR
         "id": 811765527,
         "name": "Carlos Aldrich",
         "email": "carlos@example.com",
-        "externalId": null
+        "external_id": null
       }
     ]
   },

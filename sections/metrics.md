@@ -35,7 +35,7 @@ OR
                 "id": 856843816,
                 "links": {},
                 "name": "Development",
-                "shortName": "DDC",
+                "short_name": "DDC",
                 "strategy": "Emphasize \"Working Software\", even over \"Comprehensive Documentation\""
             }
         ],

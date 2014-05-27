@@ -22,14 +22,14 @@ OR
             "id": 856843816,
             "links": {},
             "name": "Development",
-            "shortName": "DDC",
+            "short_name": "DDC",
             "strategy": "Emphasize \"Working Software\", even over \"Comprehensive Documentation\""
         }
     ],
     "people": [
         {
             "email": "monica@example.com",
-            "externalId": null,
+            "external_id": null,
             "id": 911230097,
             "name": "Monica Wolfson"
         }
@@ -53,7 +53,7 @@ OR
     ]
   },
     "projects": {
-        "createdAt": "2014-05-27T15:08:41-04:00",
+        "created_at": "2014-05-27T15:08:41-04:00",
         "description": "A waiting project with cross referenced waiting on info",
         "id": 853879595,
         "links": {
@@ -61,10 +61,10 @@ OR
             "person": 911230097,
             "role": 127110797
         },
-        "privateToCircle": false,
+        "private_to_circle": false,
         "status": "Waiting",
-        "waitingOnWhat": "Report",
-        "waitingOnWho": "@Business_Analyst"
+        "waiting_on_what": "Report",
+        "waiting_on_who": "@Business_Analyst"
     }
 }
 ```
