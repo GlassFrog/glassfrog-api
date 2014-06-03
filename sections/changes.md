@@ -2,7 +2,7 @@ Release Notes
 ===============
 
 
-May 28, 2014 - Initial API v3 (beta)
+May 28, 2014 - v3.0 (initial beta release)
 ------------------------
 * Implements all v2 functionality
 * Format of GET responses and POST and PATCH bodies is json (not xml)
