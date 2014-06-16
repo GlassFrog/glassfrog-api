@@ -1,0 +1,86 @@
+<html>
+<head>
+<script type="text/javascript">
+
+
+function generateCsv(){
+  var apiKey = "";
+
+  function apiUrl(endpoint) {
+    return 'https://glassfrog.holacracy.org/api/v3' + endpoint + '?api_key=' + apiKey;
+  }
+
+  function getApiKey(){
+    var apiKeyDeferred = jQuery.Deferred();
+    $('body').empty();
+    $('body').append('<form><p>What\'s your api key?:<input id="apiKey" type="text"/><input type="submit"></p></form>');
+    $('form').on('submit', function(){
+      apiKey = $('#apiKey').val();
+      roles.url = apiUrl('/roles');
+      $('body').empty();
+      event.preventDefault();
+      apiKeyDeferred.resolve();
+    });
+    return apiKeyDeferred;
+  }
+
+  function arrayToCsv(rows) {
+    return rows.map(function (row) {
+      return row.join(",")
+    }).join("\n");
+  }
+
+  var people = new Backbone.Collection();
+  var circles = new Backbone.Collection();
+
+  var Role = Backbone.Model.extend({
+    peopleNames: function(){
+      var peopleIds = this.get('links').people;
+      return _(peopleIds).isEmpty() ? ['--unfilled--'] : peopleIds.map(function (p) {
+        return people.get(p).get('name');
+      });
+    }
+  });
+
+  var RoleCollection = Backbone.Collection.extend({
+    url: apiUrl('/roles'),
+    model: Role,
+    parse: function (data) {
+      people.reset(data['linked']['people']);
+      circles.reset(data['linked']['circles']);
+      return data['roles'];
+    },
+    csvRows: function(){
+      var rows = [['Circle', 'Role', 'Filled-by' ]];
+      _(roles.models).each(function (m) {
+        _(m.peopleNames()).each(function (personName) {
+          rows.push([
+            circles.get(m.get('links').circle).get('name'),
+            m.get('name'),
+            personName
+          ]);
+        });
+      });
+      return rows;
+    }
+  });
+
+  var roles = new RoleCollection();
+
+  roles.on('sync', function () {
+    var csvString = arrayToCsv(roles.csvRows());
+    $('body').append('<pre>' + csvString + '</pre>');
+  });
+
+  getApiKey().done(function(){
+    roles.fetch().fail(function(m){
+      alert('oops, the api request failed-- try reloading and double-check your key is valid.');
+    });
+  });
+}
+
+setTimeout(generateCsv, 1000); // wait for libraries to load.
+</script>
+</head>
+<body/>
+</html>
