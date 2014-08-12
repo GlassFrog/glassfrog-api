@@ -1,12 +1,12 @@
 Release Notes
 ===============
 
-August 8, 2014 - v3.1 (operational systems sync)
+August 8, 2014 - v3.1 (personal systems sync)
 ------------------------------------------------
+* You can now create, update, archive, and delete projects via the api.
+* You can now list Actions and Triggers via the api, and filter them by created date
 * Projects now include link, value, effort, and roi fields
-* New actions: project create, update, archive, and delete endpoints
-* Added Action and Trigger listing
-* dates are output in utc
+* Default timezone for dates is now set to UTC instead of Eastern time.
 
 May 28, 2014 - v3.0 (initial beta release)
 ------------------------------------------
