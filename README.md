@@ -91,6 +91,11 @@ Referenced objects can be found in under the 'linked' top level key.
 }
 ```
 
+#### Referencing Roles
+
+Many fields support referencing roles, using the format: @Role_Name
+These will show up hyper-linked to the role in the GlassFrog UI.
+
 GlassFrog API uses standard HTTP response codes to indicate various states:
 
 #### Success
