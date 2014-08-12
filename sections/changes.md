@@ -1,7 +1,7 @@
 Release Notes
 ===============
 
-August 8, 2014 - v3.1 (personal systems sync)
+August 11, 2014 - v3.1 (personal systems sync)
 ------------------------------------------------
 * You can now create, update, archive, and delete projects via the api.
 * You can now list Actions and Triggers via the api, and filter them by created date
