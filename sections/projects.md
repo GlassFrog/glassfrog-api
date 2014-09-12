@@ -91,7 +91,7 @@ Adding Projects (POST)
 
 ### Create a Project
 
-`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"projects":[{ "description":"API docs updated", "circle_id":346, "role_id":2331 }]}' https://nexus-staging.holacracy.org/api/v3/projects`
+`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"projects":[{ "description":"API docs updated", "circle_id":346, "role_id":2331 }]}' https://glassfrog.holacracy.org/api/v3/projects`
 
 A successful POST returns status 200 with the newly created resource in the body:
 

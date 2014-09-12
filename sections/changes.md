@@ -1,6 +1,11 @@
 Release Notes
 ===============
 
+September 9, 2014 - (global checklist_items & metrics)
+------------------------------------------------------
+* Checklist Item and Metric endpoints now support create, update, and delete
+* Can now create "global" Checklist Items and Metrics that show up on each circle in the organization
+
 August 11, 2014 - v3.1 (personal systems sync)
 ------------------------------------------------
 * You can now create, update, archive, and delete projects via the api.
@@ -18,4 +23,6 @@ May 28, 2014 - v3.0 (initial beta release)
 * [Roles](roles.md) endpoints include core roles (Lead Link, Rep Link, Secretary, Facilitator)
 * Added readonly endpoints for [projects](projects.md), [metrics](metrics.md), and [checklist_items](checklist_items.md)
 * Added ability to assign roles
+
+
 
