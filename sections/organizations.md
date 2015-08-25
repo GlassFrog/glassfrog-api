@@ -1,0 +1,5 @@
+Organizations
+=============
+
+[:show, :index]
+---------------
