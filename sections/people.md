@@ -95,14 +95,14 @@ Creating a Person through the API will email the new user with a welcome email a
 Only API_keys associated with accounts with admin permissions can add people to an organization.
 
 #### Attributes
-* __name__ _(required)_: full name of the person
-* __email__ _(required)_: email of the person
-* __external_id__ _(optional)_: id of the person from any external system
+* abc __name__ (required): full name of the person
+* abc __email__ (required): email of the person
+* abc __external_id__ (optional): id of the person from any external system
 
 
 
 Updating People (PATCH/PUT)
----------------------------------
+---------------------------
 
 ### Updating Name
 

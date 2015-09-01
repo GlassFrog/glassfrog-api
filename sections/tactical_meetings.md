@@ -4,7 +4,11 @@ Tactical Meetings
 Retrieving Tactical Meetings (GET)
 ----------------------------------
 
+### Get all Tactical Meetings in the Organization's History
+
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/tactical_meetings`
+
+### Get a Specific Tactical Meeting
 
 `curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/tactical_meetings/$TACTICAL_MEETING_ID`
 
@@ -128,6 +132,17 @@ Retrieving Tactical Meetings (GET)
 ```
 
 
-Updating Tactical Meetings (PATCH)
-----------------------------------
+Updating Tactical Meetings (PATCH/PUT)
+--------------------------------------
+
+
+### Updating Multiple Attributes
+
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[
+  { "op":"replace","path":"/tactical_meetings/0/person_id", "value":"123"},
+  { "op":"replace","path":"/tactical_meetings/0/current_agenda_item_id", "value":"456"}
+]' https://glassfrog.holacracy.org/api/v3/tactical_meetings/$TACTICAL_MEETING_ID`
+
+Returns 204 No Content on success.
+
 
