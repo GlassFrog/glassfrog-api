@@ -112,12 +112,13 @@ GlassFrog API uses standard HTTP response codes to indicate various states:
 
 ### API Endpoint Details
 
-* [People](sections/people.md)
-* [Roles](sections/roles.md)
-* [Circles](sections/circles.md)
-* [Projects](sections/projects.md)
 * [Checklist Items](sections/checklist_items.md)
+* [Circles](sections/circles.md)
 * [Metrics](sections/metrics.md)
+* [People](sections/people.md)
+* [Projects](sections/projects.md)
+* [Roles](sections/roles.md)
+* [Tactical Meetings](sections/tactical_meetings.md)
 
 
 Help us make it better!
