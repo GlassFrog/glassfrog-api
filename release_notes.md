@@ -1,15 +1,6 @@
 Release Notes
 ===============
 
-August 25, 2015
----------------
-* Files (empty for now) added for missing paths:
-  * governance_meetings.md
-  * organizations.md
-  * policies.md
-  * proposals.md
-  * tactical_meetings.md
-  * tensions.md
 
 September 9, 2014 - (global checklist_items & metrics)
 ------------------------------------------------------
