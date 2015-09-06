@@ -118,7 +118,6 @@ GlassFrog API uses standard HTTP response codes to indicate various states:
 * [People](sections/people.md)
 * [Projects](sections/projects.md)
 * [Roles](sections/roles.md)
-* [Tactical Meetings](sections/tactical_meetings.md)
 
 
 Help us make it better!
