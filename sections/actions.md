@@ -14,7 +14,7 @@ Retrieving Actions (GET)
 
 #### Filtering by created_since
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/actions?create_since=$ISO8601_DATE`
+`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/actions?created_since=$ISO8601_DATE`
 
 Dates should be specified in iso8601 format ie. 2007-04-05T12:30-02:00
 If the date string does not specify a timezone (ie. 2007-04-05), GlassFrog assumes UTC.
