@@ -6,20 +6,20 @@ Retrieving Metrics (GET)
 
 ### Getting all Metrics on a Circle (including global metrics)
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/metrics`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/metrics`
 
 OR
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/metrics?circle_id=$CIRCLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/metrics?circle_id=$CIRCLE_ID`
 
 
 ### Getting all Metrics on a Circle without global metrics
 
-`curl -H "X-Auth-Token: $API_KEY" 'https://glassfrog.holacracy.org/api/v3/metrics?circle_id=856843816&global=false'`
+`curl -H "X-Auth-Token: $API_KEY" 'https://api.glassfrog.com/api/v3/metrics?circle_id=856843816&global=false'`
 
 ### Getting all Global Metrics
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/metrics?global=true`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/metrics?global=true`
 
 
 #### Response Format
@@ -102,7 +102,7 @@ Adding Metrics (POST)
 
 ### Create a Metric
 
-`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"metrics":[{"description":"A New Metric", "frequency":"Weekly", "circle_id":856843816, "role_id":905502603}]}' https://glassfrog.holacracy.org/api/v3/metrics`
+`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"metrics":[{"description":"A New Metric", "frequency":"Weekly", "circle_id":856843816, "role_id":905502603}]}' https://api.glassfrog.com/api/v3/metrics`
 
 A successful POST returns status 200 with the newly created resource in the body:
 
@@ -149,11 +149,11 @@ Updating Metrics (PATCH)
 
 ### Updating Description
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/metrics/0/description", "value":"number of Api Doc changes"}]' https://glassfrog.holacracy.org/api/v3/metrics/$METRIC_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/metrics/0/description", "value":"number of Api Doc changes"}]' https://api.glassfrog.com/api/v3/metrics/$METRIC_ID`
 
 ### Updating Multiple Attributes
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/metrics/0/description", "value":"number of Api Doc changes"},{"op":"replace","path":"/metrics/0/frequency", "value":"Monthly"}]' https://glassfrog.holacracy.org/api/v3/metrics/$METRIC_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/metrics/0/description", "value":"number of Api Doc changes"},{"op":"replace","path":"/metrics/0/frequency", "value":"Monthly"}]' https://api.glassfrog.com/api/v3/metrics/$METRIC_ID`
 
 Returns 204 No Content on success.
 
@@ -163,6 +163,6 @@ Removing Metrics
 
 ### Remove a Metric (DELETE)
 
-`curl -H "X-Auth-Token: $API_KEY" -X DELETE https://glassfrog.holacracy.org/api/v3/metrics/$METRIC_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X DELETE https://api.glassfrog.com/api/v3/metrics/$METRIC_ID`
 
 returns 204 No Content on success.

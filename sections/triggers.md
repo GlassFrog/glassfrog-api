@@ -6,15 +6,15 @@ Retrieving Triggers (GET)
 
 #### Filtering by person_id
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/triggers?person_id=$PERSON_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/triggers?person_id=$PERSON_ID`
 
 #### Filtering by circle_id
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/triggers?circle_id=$CIRCLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/triggers?circle_id=$CIRCLE_ID`
 
 #### Filtering by created_since
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/triggers?create_since=$ISO8601_DATE`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/triggers?create_since=$ISO8601_DATE`
 
 Dates should be specified in iso8601 format ie. 2007-04-05T12:30-02:00
 If the date string does not specify a timezone (ie. 2007-04-05), GlassFrog assumes UTC.

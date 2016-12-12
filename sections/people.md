@@ -6,20 +6,20 @@ Retrieving People (GET)
 
 ### Get all People in the Organization
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people`
 
 ### Get a Specific Person
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people/$PERSON_ID`
 
 
 ### Filtering by Circle (circle_id=)
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?circle_id=$CIRCLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people?circle_id=$CIRCLE_ID`
 
 OR
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/people`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/people`
 
 
 ### Filtering by Role (role=)
@@ -28,19 +28,19 @@ The API supports retrieving all role-fillers of core roles in the organization.
 
 ##### Secretary
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=secretary`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people?role=secretary`
 
 ##### Rep Link
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=rep_link`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people?role=rep_link`
 
 ##### Lead Link
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=lead_link`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people?role=lead_link`
 
 ##### Facilitator
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people?role=facilitator`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people?role=facilitator`
 
 
 #### Response Format
@@ -71,7 +71,7 @@ Adding People (POST)
 
 ### Create a New Member of the Organization
 
-`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"people":[{ "name":"Sally Benally", "email":"sally@example.com" }]}' https://glassfrog.holacracy.org/api/v3/people`
+`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"people":[{ "name":"Sally Benally", "email":"sally@example.com" }]}' https://api.glassfrog.com/api/v3/people`
 
 A successful POST returns status 200 with the newly created resource in the body:
 
@@ -106,11 +106,11 @@ Updating People (PATCH/PUT)
 
 ### Updating Name
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/people/0/name", "value":"Sally Martinez"}]' https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/people/0/name", "value":"Sally Martinez"}]' https://api.glassfrog.com/api/v3/people/$PERSON_ID`
 
 ### Updating Multiple Attributes
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/people/0/name", "value":"Sally Martinez"},{"op":"replace","path":"/people/0/email", "value":"sally.martinez@example.com"}]' https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/people/0/name", "value":"Sally Martinez"},{"op":"replace","path":"/people/0/email", "value":"sally.martinez@example.com"}]' https://api.glassfrog.com/api/v3/people/$PERSON_ID`
 
 Returns 204 No Content on success.
 
@@ -120,6 +120,6 @@ Removing People (DELETE)
 
 ### Remove a Person
 
-`curl -H "X-Auth-Token: $API_KEY" -X DELETE https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X DELETE https://api.glassfrog.com/api/v3/people/$PERSON_ID`
 
 returns 204 No Content on success.

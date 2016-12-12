@@ -6,11 +6,11 @@ Retrieving Projects (GET)
 
 ### Getting all Projects on a Circle
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/projects`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/projects`
 
 OR
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/projects?circle_id=$CIRCLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/projects?circle_id=$CIRCLE_ID`
 
 
 #### Response Format
@@ -91,7 +91,7 @@ Adding Projects (POST)
 
 ### Create a Project
 
-`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"projects":[{ "description":"API docs updated", "circle_id":346, "role_id":2331 }]}' https://glassfrog.holacracy.org/api/v3/projects`
+`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"projects":[{ "description":"API docs updated", "circle_id":346, "role_id":2331 }]}' https://api.glassfrog.com/api/v3/projects`
 
 A successful POST returns status 200 with the newly created resource in the body:
 
@@ -161,11 +161,11 @@ Updating Projects (PATCH/PUT)
 
 ### Updating Description
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/projects/0/description", "value":"Api Docs updated"}]' https://glassfrog.holacracy.org/api/v3/projects/$PROJECT_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/projects/0/description", "value":"Api Docs updated"}]' https://api.glassfrog.com/api/v3/projects/$PROJECT_ID`
 
 ### Updating Multiple Attributes
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/projects/0/description", "value":"More API doc changes"},{"op":"replace","path":"/projects/0/status", "value":"Future"}]' https://glassfrog.holacracy.org/api/v3/projects/$PROJECT_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/projects/0/description", "value":"More API doc changes"},{"op":"replace","path":"/projects/0/status", "value":"Future"}]' https://api.glassfrog.com/api/v3/projects/$PROJECT_ID`
 
 Returns 204 No Content on success.
 
@@ -177,7 +177,7 @@ Removing Projects
 
 ### Archiving a Project (PATCH) update status to 'Archived'
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/projects/0/status", "value":"Archived"}]' https://glassfrog.holacracy.org/api/v3/projects/$PROJECT_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/projects/0/status", "value":"Archived"}]' https://api.glassfrog.com/api/v3/projects/$PROJECT_ID`
 
 returns 204 No Content on success.
 
@@ -186,7 +186,7 @@ returns 204 No Content on success.
 
 ### Remove a Project completely (DELETE)
 
-`curl -H "X-Auth-Token: $API_KEY" -X DELETE https://glassfrog.holacracy.org/api/v3/projects/$PROJECT_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X DELETE https://api.glassfrog.com/api/v3/projects/$PROJECT_ID`
 
 returns 204 No Content on success.
 

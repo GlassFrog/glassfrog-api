@@ -6,29 +6,29 @@ Retrieving Roles (GET)
 
 ### Get all Roles for Organization
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/roles`
 
 ### Get a specific Role
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/roles/$ROLE_ID`
 
 
 ### Filtering by Person
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles?person_id=$PERSON_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/roles?person_id=$PERSON_ID`
 
 OR
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people/$PERSON_ID/roles`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people/$PERSON_ID/roles`
 
 
 ### Filtering by Circle
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/roles?circle_id=$CIRCLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/roles?circle_id=$CIRCLE_ID`
 
 OR
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/roles`
 
 
 #### Response Format
@@ -85,11 +85,11 @@ With the exception of Lead Link roles, role assignment is additive and will add 
 
 ### Adding a Role Assignment
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"add","path":"/roles/0/links/people/$PERSON_ID"}]' https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"add","path":"/roles/0/links/people/$PERSON_ID"}]' https://api.glassfrog.com/api/v3/roles/$ROLE_ID`
 
 ### Removing Role Assignment
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"remove","path":"/roles/0/links/people/$PERSON_ID"}]' https://glassfrog.holacracy.org/api/v3/roles/$ROLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{"op":"remove","path":"/roles/0/links/people/$PERSON_ID"}]' https://api.glassfrog.com/api/v3/roles/$ROLE_ID`
 
 #### Emails Sent
 

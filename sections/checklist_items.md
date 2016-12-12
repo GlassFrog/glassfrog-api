@@ -6,20 +6,20 @@ Retrieving Checklist Items (GET)
 
 ### Getting all Checklist Items on a Circle (including global items)
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/checklist_items`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/checklist_items`
 
 OR
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/checklist_items?circle_id=$CIRCLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/checklist_items?circle_id=$CIRCLE_ID`
 
 
 ### Getting all Checklist Items on a Circle without global items
 
-`curl -H "X-Auth-Token: $API_KEY" 'https://glassfrog.holacracy.org/api/v3/checklist_items?circle_id=856843816&global=false'`
+`curl -H "X-Auth-Token: $API_KEY" 'https://api.glassfrog.com/api/v3/checklist_items?circle_id=856843816&global=false'`
 
 ### Getting all Global Checklist Items
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/checklist_items?global=true`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/checklist_items?global=true`
 
 
 #### Response Format
@@ -110,7 +110,7 @@ Adding Checklist Items (POST)
 
 ### Create a Checklist Item
 
-`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"checklist_items":[{"description":"A New Item", "frequency":"Weekly", "circle_id":856843816, "role_id":905502603}]}' https://glassfrog.holacracy.org/api/v3/checklist_items`
+`curl -H "X-Auth-Token: $API_KEY" -X POST -d '{"checklist_items":[{"description":"A New Item", "frequency":"Weekly", "circle_id":856843816, "role_id":905502603}]}' https://api.glassfrog.com/api/v3/checklist_items`
 
 A successful POST returns status 200 with the newly created resource in the body:
 
@@ -161,11 +161,11 @@ Updating Checklist Items (PATCH)
 
 ### Updating Description
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/checklist_items/0/description", "value":"Api Docs updated"}]' https://glassfrog.holacracy.org/api/v3/checklist_items/$CHECKLIST_ITEM_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/checklist_items/0/description", "value":"Api Docs updated"}]' https://api.glassfrog.com/api/v3/checklist_items/$CHECKLIST_ITEM_ID`
 
 ### Updating Multiple Attributes
 
-`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/checklist_items/0/description", "value":"Update API Docs"},{"op":"replace","path":"/checklist_items/0/frequency", "value":"Monthly"}]' https://glassfrog.holacracy.org/api/v3/checklist_items/$CHECKLIST_ITEM_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X PATCH -d '[{ "op":"replace","path":"/checklist_items/0/description", "value":"Update API Docs"},{"op":"replace","path":"/checklist_items/0/frequency", "value":"Monthly"}]' https://api.glassfrog.com/api/v3/checklist_items/$CHECKLIST_ITEM_ID`
 
 Returns 204 No Content on success.
 
@@ -175,6 +175,6 @@ Removing Checklist Items
 
 ### Remove a Checklist Item (DELETE)
 
-`curl -H "X-Auth-Token: $API_KEY" -X DELETE https://glassfrog.holacracy.org/api/v3/checklist_items/$CHECKLIST_ITEM_ID`
+`curl -H "X-Auth-Token: $API_KEY" -X DELETE https://api.glassfrog.com/api/v3/checklist_items/$CHECKLIST_ITEM_ID`
 
 returns 204 No Content on success.

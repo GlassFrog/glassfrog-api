@@ -33,19 +33,19 @@ Using the API
 
 ### Making a Request
 
-All URLs start with `https://glassfrog.holacracy.org/API/v3/`. **SSL only**.
+All URLs start with `https://api.glassfrog.com/API/v3/`. **SSL only**.
 The full request path is formed by appending the method path to this address.
 
 An API key is required for all requests.  To include an API key in a request, append it to the URL as a parameter:
 
 ```
-curl "https://glassfrog.holacracy.org/api/v3/people?api_key=$API_KEY"
+curl "https://api.glassfrog.com/api/v3/people?api_key=$API_KEY"
 ```
 
 Or pass it as the value of the `X-Auth-Token` header:
 
 ```
-curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/people
+curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people
 ```
 
 ### PATCH Requests

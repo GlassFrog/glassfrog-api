@@ -6,12 +6,12 @@ Retrieving Circles (GET)
 
 ### A Specific Circle
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID`
 
 
 ### All Circles in the Organization
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles`
 
 #### Response Format
 
@@ -40,7 +40,7 @@ Retrieving Circles (GET)
 
 ### Including Members in the Response (include=members)
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles?include=members`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles?include=members`
 
 will return all circles in the organization with a sublist of the members in each circle:
 
@@ -88,20 +88,20 @@ The circles endpoint also supports aliases that refer to the following resources
 
 ##### [People](/sections/people.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/people`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/people`
 
 ##### [Roles](/sections/roles.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/roles`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/roles`
 
 ##### [Projects](/sections/projects.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/projects`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/projects`
 
 ##### [Metrics](/sections/metrics.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/metrics`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/metrics`
 
 ##### [Checklist Items](/sections/checklist_items.md)
 
-`curl -H "X-Auth-Token: $API_KEY" https://glassfrog.holacracy.org/api/v3/circles/$CIRCLE_ID/checklist_items`
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/checklist_items`
