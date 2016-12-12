@@ -1,46 +1,126 @@
-The Glassfrog API
-====================
+Glassfrog API v3 beta
+=====================
+
+Overview
+--------
+
+### Status
+
+The v3 API is in beta.  The current stable version is [v2](../../tree/API_v2).
+
+With v3, we've upgraded the API to use and return json.  When v3 is finalized, v2 will be deprecated and new features will be added only to v3.
+If you are currently using v2, you can try out v3 at the same time without affecting your current integrations.
+Please note that since v3 is in beta, the API endpoints are subject to change.
+While we will make reasonable attempts to keep them stable, we may still be changing any endpoint as we get feedback on usage.
+
+### Recent Changes
+
+For details on the latest changes see [Release Notes](sections/changes.md).
+
+### Authentication
+
+Authentication for the API is provided by API keys which can be found in GlassFrog in the profile/account dropdown under your name in the top right of the application.
+API keys provide full access to your GlassFrog account with the same permissions that you have.
+Keep them safe like you would your password! Generating and revoking keys is easy, create one for each application you need to integrate with, and it will be easier to replace later if a specific key is compromised.
 
 
-Requesting an API key
+### Design
+
+* API v3 is designed to follow the emerging [json-API](http://jsonAPI.org/format/) standard
+
+Using the API
 ----------------
 
-An organizational API key may be requested by emailing glassfrogsupport@holacracyone.com 
+### Making a Request
 
+All URLs start with `https://api.glassfrog.com/API/v3/`. **SSL only**.
+The full request path is formed by appending the method path to this address.
 
-Making a request
-----------------
-
-All URLs start with `https://glassfrog.holacracy.org/api`. **SSL only**.  The full request path is formed by appending the method path to this address.
-
-An organizational API key is required for all requests.  To include an API key in a request, append it to the URL as a parameter.
+An API key is required for all requests.  To include an API key in a request, append it to the URL as a parameter:
 
 ```
-https://glassfrog.holacracy.org/api/v2/person.xml?api_key=123456789
+curl "https://api.glassfrog.com/api/v3/people?api_key=$API_KEY"
 ```
 
-Changes In Version 2
------------------
-* API paths start with /api/v2/
-* Role information now includes:
-	* Term expiration dates for elected roles
-	* Role purposes
-	* Scopes
-	* Accountability IDs for structural roles (e.g. Lead Link)
-* Person information no longer includes login (now obsolete)
-* Can now return all roles in a circle, including supporting sub-circle IDs
+Or pass it as the value of the `X-Auth-Token` header:
+
+```
+curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/people
+```
+
+### PATCH Requests
+
+GlassFrog API uses PATCH for updating resource documents, however, PUT may be used in place of PATCH
+
+PATCH / PUT requests follow the jsonapi formatting standards. See "Updating a Document" and "Relationships" sections of the standards
+for more details: [http://jsonapi.org/format](http://jsonapi.org/format).
+
+**Transactional updates:** If one operation in a multi-operation requests fails then the whole request will fail and none of the operations will be processed.
 
 
-API Methods
------------------
+### Responses
 
-* [Users](https://github.com/holacracybrian/glassfrog-api/blob/API_v2/sections/users.md)
-* [Roles](https://github.com/holacracybrian/glassfrog-api/blob/API_v2/sections/roles.md)
-* [Circles](https://github.com/holacracybrian/glassfrog-api/blob/API_v2/sections/circles.md)
-* [Mailing Lists](https://github.com/holacracybrian/glassfrog-api/blob/API_v2/sections/mailing_lists.md)
+#### JSON Data
+API v3 is designed to follow the emerging [json-API](http://jsonAPI.org/format/) standard
+Relationships between objects are represented in the 'links' attribute, and contain ids that reference other objects.
+Referenced objects can be found in under the 'linked' top level key.
+
+```json
+{
+  "linked": {
+    "people": [
+      {
+        "id": 811765527,
+        "name": "Carlos Aldrich",
+        "email": "carlos@example.com",
+        "external_id": null
+      },
+    ]
+  },
+  "circles": [
+    {
+      "id": 582240928,
+      "name": "Operations",
+      "links": {
+        "people": [
+          811765527
+        ]
+      }
+    }
+  ]
+}
+```
+
+#### Referencing Roles
+
+Many fields support referencing roles, using the format: @Role_Name
+These will show up hyper-linked to the role in the GlassFrog UI.
+
+GlassFrog API uses standard HTTP response codes to indicate various states:
+
+#### Success
+* 200 - Success:  Response body contains requested or updated data.
+* 204 - No Content: Update or Delete was performed as requested.
+
+#### Errors
+* 401 - Unauthenticated: No API key or invalid API key provided
+* 403 - Unauthorized:  Your API key is good but your user account doesn't have permission to perform the specified action.
+* 404 - Not Found: Couldn't find a resource you requested, or invalid URL
+* 422 - Unprocessable Entity: There was a problem with the data you provided, either we couldn't parse it or it specified an invalid state.
+* 500 - Server Error: Unhandled exception
 
 
-Help us make it better
-----------------------
+### API Endpoint Details
 
-Please tell us how we can make the API better.  If you have a specific feature request or if you found a bug, please email glassfrogsupport@holacracyone.com  
+* [Checklist Items](sections/checklist_items.md)
+* [Circles](sections/circles.md)
+* [Metrics](sections/metrics.md)
+* [People](sections/people.md)
+* [Projects](sections/projects.md)
+* [Roles](sections/roles.md)
+
+
+Help us make it better!
+-----------------------
+
+Please tell us how we can make the API better.  If you have a specific feature request or if you found a bug, please email glassfrog-api@holacracyone.com

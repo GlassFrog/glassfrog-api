@@ -1,126 +1,107 @@
 Circles
 ========
 
+Retrieving Circles (GET)
+----------------------
 
-Getting circles
-----------
+### A Specific Circle
 
-* `GET /circle.xml` will return all circles in the organization.
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID`
 
-Returns 200 OK with a response body in the following format when successful:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<circles type="array">
-  <circle>
-    <id type="integer">429327429</id>
-    <short-name>Board</short-name>
-    <name>Board</name>
-  </circle>
-  <circle>
-    <id type="integer">1041583805</id>
-    <short-name>GCC</short-name>
-    <name>GCC</name>
-  </circle>
-  <circle>
-    <id type="integer">582240928</id>
-    <short-name>Ops</short-name>
-    <name>Operations</name>
-  </circle>
-  <circle>
-    <id type="integer">856843816</id>
-    <short-name>DDC</short-name>
-    <name>Development</name>
-  </circle>
-  <circle>
-    <id type="integer">708861762</id>
-    <short-name>Sales</short-name>
-    <name>Sales</name>
-  </circle>
-  <circle>
-    <id type="integer">5828846</id>
-    <short-name>Backend</short-name>
-    <name>Back End Development</name>
-  </circle>
-  <circle>
-    <id type="integer">906325632</id>
-    <short-name>UI</short-name>
-    <name>User Interface</name>
-  </circle>
-</circles>
+### All Circles in the Organization
+
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles`
+
+#### Response Format
+
+```json
+{
+  "circles": [
+    {
+      "id": 429327429,
+      "name": "Board",
+      "short_name": "Board",
+      "strategy": null,
+      "links": {
+      }
+    },
+    {
+      "id": 1041583805,
+      "name": "GCC",
+      "short_name": "GCC",
+      "strategy": "Emphasize \"Documenting & Aligning to Standards\", even over \"Developing & Co-Creating Novelty\"",
+      "links": {
+      }
+    },
+  ]
+}
+```
+
+### Including Members in the Response (include=members)
+
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles?include=members`
+
+will return all circles in the organization with a sublist of the members in each circle:
+
+```json
+{
+  "linked": {
+    "people": [
+      {
+        "id": 657190835,
+        "name": "Lawrence Copper",
+        "email": "lawrence@example.com",
+        "external_id": null
+      },
+      {
+        "id": 811765527,
+        "name": "Carlos Aldrich",
+        "email": "carlos@example.com",
+        "external_id": null
+      },
+    ]
+  },
+  "circles": [
+    {
+      "id": 582240928,
+      "name": "Operations",
+      "short_name": "Ops",
+      "strategy": "Emphasize \"Documenting & Aligning to Standards\", even over \"Developing & Co-Creating Novelty\"",
+      "links": {
+        "people": [
+          811765527,
+          657190835
+        ]
+      }
+    }
+  ]
+}
 ```
 
 
-* `GET /circle.xml?include=members` will return all circles in the organization with a sublist of the members in each circle.
+Aliases
+----------------
 
-Returns 200 OK with a response body in the following format when successful:
+The circles endpoint also supports aliases that refer to the following resources for a specific circle. See the documentation for
+  each resource below for options:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<circles type="array">
-  <circle>
-    <id type="integer">429327429</id>
-    <short-name>Board</short-name>
-    <name>Board</name>
-    <members type="array">
-      <member>
-        <id type="integer">62933542</id>
-        <name>Maureen Linton</name>
-        <email>maureen@example.com</email>
-      <member>
-    </members>
-  </circle>
-<circles>
-```
+##### [People](/sections/people.md)
 
-Getting circle roles
-----------
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/people`
 
-* `GET /circle/[:id]/roles.xml` will return all custom roles in the circle specified by [:id].
+##### [Roles](/sections/roles.md)
 
-It can be used to map the structure of the whole organization by first finding the circle ID of the Board circle from the method above, using this method to list the roles in the Board circle, and recursively traversing the circle structure using the supporting circle ID fields in the resulting role list.
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/roles`
 
-Returns 200 OK with a response body in the following format when successful:
+##### [Projects](/sections/projects.md)
 
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/projects`
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<circle>
-  <id type="integer">1041583805</id>
-  <name>GCC</name>
-  <role>
-    <id type="integer">65849892</id>
-    <name>Development</name>
-    <supporting-circle-id type="integer">856843816</supporting-circle-id>
-    <purpose>Blow the client away with effortless software delivery.</purpose>
-    <scopes>
-      <scope>
-        <description>Software business model</description>
-        <id type="integer">775947396</id>
-      </scope>
-    </scopes>
-    <accountabilities>
-      <accountability>
-        <description>Providing software solution implementation services.</description>
-        <id type="integer">412385958</id>
-      </accountability>
-    </accountabilities>
-    <filled-by>
-      <person>
-        <id type="integer">811765527</id>
-        <name>Carlos Aldrich</name>
-      </person>
-    </filled-by>
-  </role>
-  <role>
-    <id type="integer">234478234</id>
-    <name>Sales</name>
-    <accountabilities>
-      <accountability>
-        <description>Selling software services.</description>
-        <id type="integer">830864011</id>
-      </accountability>
-    </accountabilities>
-  </role>
-</circle>
-```
+##### [Metrics](/sections/metrics.md)
+
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/metrics`
+
+##### [Checklist Items](/sections/checklist_items.md)
+
+`curl -H "X-Auth-Token: $API_KEY" https://api.glassfrog.com/api/v3/circles/$CIRCLE_ID/checklist_items`
