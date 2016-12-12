@@ -11,12 +11,12 @@ An organizational API key may be requested by emailing glassfrogsupport@holacrac
 Making a request
 ----------------
 
-All URLs start with `https://glassfrog.holacracy.org/api`. **SSL only**.  The full request path is formed by appending the method path to this address.
+All URLs start with `https://api.glassfrog.com/api`. **SSL only**.  The full request path is formed by appending the method path to this address.
 
 An organizational API key is required for all requests.  To include an API key in a request, append it to the URL as a parameter.
 
 ```
-https://glassfrog.holacracy.org/api/person.xml?api_key=123456789
+https://api.glassfrog.com/api/person.xml?api_key=123456789
 ```
 
 
