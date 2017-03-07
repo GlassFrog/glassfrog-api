@@ -1,11 +1,9 @@
 The Glassfrog API
 ====================
 
-
-Requesting an API key
-----------------
-
-An organizational API key may be requested by emailing glassfrogsupport@holacracyone.com 
+This documentation describes the GlassFrog v2 API.  That API is now superseded by the v3 API, which is
+described [here](https://app.glassfrog.com/docs/api/v3).  The v2 API is deprecated and will eventually
+go away.
 
 
 Making a request
@@ -43,4 +41,4 @@ API Methods
 Help us make it better
 ----------------------
 
-Please tell us how we can make the API better.  If you have a specific feature request or if you found a bug, please email glassfrogsupport@holacracyone.com  
+Please tell us how we can make the API better.  If you have a specific feature request or if you found a bug, please email support@glassfrog.com.
