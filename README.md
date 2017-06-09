@@ -15,7 +15,7 @@ While we will make reasonable attempts to keep them stable, we may still be chan
 
 ### Recent Changes
 
-For details on the latest changes see [Release Notes](sections/changes.md).
+For details on the latest changes see [Release Notes](release_notes.md).
 
 ### Authentication
 
